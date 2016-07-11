@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="utf-8">
+    <title>Wait and Eat</title>
+    <!--Bootstrap latest compiled and minified CSS-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!--Optional theme-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <!--Custom CSS-->
+    <link rel="stylesheet" href="content/css/app.css"/>
+</head>
+<body>
+    
+    <!-- Main content that changes based on route -->
+    <ng-view></ng-view>
+        
+        
+    <!--Third-party JS-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+    <script src="https://code.angularjs.org/1.5.0/angular-route.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.0.3/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>
+        
+    <!-- Main App Module -->
+    <script src="app/app.module.js"></script>
+        
+    <!--Landing Module-->
+    <script src="app/landing/landing.module.js"></script>
+    <script src="app/landing/config.route.js"></script>
+    
+   <!--Waitlist Module-->
+    <script src="app/waitList/waitList.module.js"></script>
+    <script src="app/waitList/config.route.js"></script>
+    <script src="app/waitList/waitList.controller.js"></script>
+        
+    
+    </body>
+    
+</html> 
