@@ -1,6 +1,5 @@
-(function(){
-    'use strict';
-    
-    angular.module('app.waitList', []);
-    
-})();
+(function() {
+   'use strict';
+ 
+   angular.module('app.waitList', []);
+ })()
