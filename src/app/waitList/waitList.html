@@ -25,7 +25,8 @@
   
 <tr ng-repeat="party in vm.parties">
     <td>
-    <!-- TODO: Checkbox to display party.done -->
+    <input ng-model="party.done" ng-change="vm.toggleDone(party)" 
+           type = "checkbox">
     </td>
     
     <td>
@@ -33,8 +34,10 @@
     <div> {{ party.phone }} </div>
     </td>
     <td><div> {{ party.notified ? 'Yes' : 'No' }}</div></td>
-    <td>
-    <!-- TODO: Button that sends text message to this party -->
+    
+    <td>  
+    <button ng-click="vm.sendTextMessage(party)" class="btn btn-success">Send SMS</button>
+        
     <button ng-click="vm.removeParty(party)" class="btn btn-danger">Remove</button>
     </td>
   

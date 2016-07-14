@@ -11,6 +11,7 @@
        var vm = this;
       
        var fireParties = firebase.database().ref('parties');
+       var fireTextMessages = firebase.database().ref('textMessages');
        
        function Party(){
         this.name = '';
@@ -24,6 +25,8 @@
        vm.parties  = $firebaseArray(fireParties); 
        vm.addParty = addParty;
        vm.removeParty = removeParty;
+       vm.sendTextMessage = sendTextMessage;
+       vm.toggleDone = toggleDone;
        
        function addParty() {
            vm.parties.$add(vm.newParty);
@@ -32,6 +35,21 @@
        
        function removeParty(party){
            vm.parties.$remove(party)
+       }
+       
+       function sendTextMessage(party){
+           var NewTextMessage = {
+               phoneNumber: party.phone,
+               size: party.size,
+               name: party.name
+           };
+           fireTextMessages.push(NewTextMessage);
+           party.notified = true;
+           vm.parties.$save(party);
+       }
+       
+       function toggleDone(party){
+           vm.parties.$save(party);
        }
    }
   
