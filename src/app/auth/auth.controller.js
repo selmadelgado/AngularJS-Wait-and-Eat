@@ -5,24 +5,25 @@
      .module('app.auth')
      .controller('AuthController', AuthController);
     
-    AuthController.$inject = ['$location', '$firebaseAuth'];
+    AuthController.$inject = ['$location', 'authService'];
  
     
-   function AuthController($location, $firebaseAuth) {
+    function AuthController($location, authService) {
        var vm = this;
-       var firebaseAuthObject = $firebaseAuth();
        
        vm.user = {
         email: '',
         password: ''  
        };
        
-       vm.register = register;
-       vm.login = login;
-       vm.logout = logout;
+        vm.register = register;
+        vm.login = login;
+        vm.logout = logout;
+        vm.isLoggedIn = authService.isLoggedIn;
+        
        
        function register(user) {
-       return firebaseAuthObject.$createUserWithEmailAndPassword(user.email, user.password)
+       return authService.register(user)
         .then(function(){
            vm.login(user);
         })
@@ -32,11 +33,11 @@
 
        }
        
-       function login(user){
-       return firebaseAuthObject.$signInWithEmailAndPassword(user.email, user.password)
-       .then(function(loggedInUser){
-            console.log(loggedInUser);
-             $location.path('/waitlist');
+       function login(user){ 
+       return authService.login(user)
+        .then(function(loggedInUser){
+        console.log(loggedInUser);
+        $location.path('/waitlist');
        })
        .catch(function(error){
            console.log(error);
@@ -44,8 +45,8 @@
      }
        
        function logout(){
-       firebaseAuthObject.$signOut();
-           $location.path('/');
+        authService.logout();
+        $location.path('/');
        }
    }
   
