@@ -23,6 +23,9 @@
         .then(function(){
            vm.login(user);
         })
+        .then(function() {
+            return authService.sendWelcomeEmail(user.email);    
+        })
         .catch(function(error){
             console.log(error);
         });
