@@ -11,7 +11,7 @@
      $routeProvider.when('/register', {
         templateUrl: 'app/auth/register.html',
         controller: 'AuthController',
-         controllerAs: 'vm'
+        controllerAs: 'vm'
       });
       
       $routeProvider.when('/login', {
