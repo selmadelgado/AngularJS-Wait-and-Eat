@@ -1,6 +1,6 @@
 # Wait and Eat
 
-This is the most recent version of the demo app for [The Angular Course](https://www.angularcourse.com).
+Live Demo: https://rawgit.com/selmadelgado/AngularJS-Wait-and-Eat/master/src/index.html#/waitlist
 
 Wait and Eat replaces paper waiting lists at restaurants.
 
@@ -17,9 +17,6 @@ The app uses these technologies:
 * AngularFire 2.0.x
 * Bootstrap 3.3.x
 
-## Getting started
-
-The easiest way to get the code is to download it as a zip file. If you're familiar with Git and Github, you can also clone the repository.
 
 ## Run the application
 
@@ -62,6 +59,4 @@ By reading and experimenting with the code, you'll also learn how to:
 * Use `controllerAs` with `vm` instead of using `this`.
 * Use `bindToController` in directives.
 
-## Contact
 
-gordon@watchandcode.com.
