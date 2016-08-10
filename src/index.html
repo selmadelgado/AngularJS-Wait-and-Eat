@@ -25,15 +25,17 @@
     <script src="https://code.angularjs.org/1.5.0/angular-route.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.0.3/firebase.js"></script>
     <script>
-      // Initialize Firebase
-      var config = {
+        // Initialize Firebase. Use your own config values here. This is just a sample.
+        // You can copy and paste your config values by following the instructions at
+        // https://firebase.google.com/docs/web/setup#add_firebase_to_your_app.
+        var config = {
         apiKey: "AIzaSyAo2PPEGWjpHKwEgr_zSiD5vq3zc_XnzuQ",
         authDomain: "waitandeat-8ec62.firebaseapp.com",
         databaseURL: "https://waitandeat-8ec62.firebaseio.com",
         storageBucket: "waitandeat-8ec62.appspot.com",
-      };
-      firebase.initializeApp(config);
-    </script>    
+        };
+        firebase.initializeApp(config);
+    </script>
     <script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>
 
     <!--main app module-->
@@ -59,6 +61,7 @@
 
     <!--core module-->
     <script src="app/core/core.module.js"></script>
+    <script src="app/core/constants.js"></script>
     <script src="app/core/firebaseData.service.js"></script>
     <script src="app/core/party.service.js"></script>
     <script src="app/core/textMessage.service.js"></script>
